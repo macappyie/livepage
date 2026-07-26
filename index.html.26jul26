@@ -34,7 +34,6 @@
       <li class="nav-item"><a class="nav-link nav-link-ma" href="courses.html">Courses</a></li>
       <li class="nav-item"><a class="nav-link nav-link-ma" href="services.html">Services</a></li>
       <li class="nav-item"><a class="nav-link nav-link-ma" href="pricing.html">Pricing</a></li>
-      <li class="nav-item"><a class="nav-link nav-link-ma" href="blog.html">Blog</a></li>
       <li class="nav-item"><a class="nav-link nav-link-ma" href="contact.html">Contact</a></li>
       </ul>
       <a href="contact.html" class="btn btn-neon btn-sm-pill ms-lg-3 mt-3 mt-lg-0">Get Started</a>
@@ -56,7 +55,6 @@
         <div class="d-flex flex-wrap gap-3 mb-5">
           <a href="courses.html" class="btn btn-neon">Get Started <i class="bi bi-arrow-up-right ms-1"></i></a>
           <a href="contact.html" class="btn btn-ghost">Contact Us</a>
-          <a href="blog.html" class="btn btn-ghost">Read Blog</a>
         </div>
         <div class="row stat-row g-4">
           <div class="col-4 stat">
@@ -310,7 +308,6 @@
         <ul class="list-unstyled d-flex flex-column gap-2">
           <li><a href="courses.html">Courses</a></li>
           <li><a href="pricing.html">Pricing Plans</a></li>
-          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="col-lg-2 col-6">
