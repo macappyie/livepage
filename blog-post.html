@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Market Blog | Money Assure</title>
+<style>
+  :root{
+    --bg:#0a0f0d;
+    --bg-card:#0f1815;
+    --border:#1c2b26;
+    --green:#00e28a;
+    --green-dim:#0a5c42;
+    --text:#e8f2ee;
+    --text-dim:#8fa39c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Arial, sans-serif;
+    line-height:1.7;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    background:rgba(10,15,13,0.95);
+    backdrop-filter:blur(6px);
+    z-index:100;
+  }
+  .logo{font-size:22px; font-weight:700; color:#fff;}
+  .logo span{color:var(--green);}
+  nav a{
+    color:var(--text);
+    text-decoration:none;
+    margin-left:28px;
+    font-size:15px;
+    font-weight:500;
+  }
+  nav a:hover, nav a.active{color:var(--green);}
+  .btn-cta{
+    background:var(--green);
+    color:#04120c !important;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+  }
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:60px 30px 100px;
+  }
+  .back-link{
+    color:var(--green);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    display:inline-block;
+    margin-bottom:30px;
+  }
+  .post-date{
+    color:var(--green);
+    font-size:13px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  h1#postTitle{
+    font-size:38px;
+    color:#fff;
+    margin:14px 0 30px;
+  }
+  #postContent p{
+    color:var(--text);
+    margin-bottom:18px;
+    font-size:17px;
+  }
+  #postContent h2, #postContent h3{
+    color:#fff;
+    margin:30px 0 14px;
+  }
+  .not-found{
+    text-align:center;
+    color:var(--text-dim);
+    padding:80px 20px;
+  }
+  footer{
+    text-align:center;
+    padding:30px;
+    color:var(--text-dim);
+    font-size:13px;
+    border-top:1px solid var(--border);
+  }
+  @media(max-width:700px){
+    header{padding:16px 20px;}
+    nav{display:none;}
+    h1#postTitle{font-size:28px;}
+    main{padding:40px 20px 70px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MONEY <span>ASSURE</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-cta">Get Started</a>
+  </nav>
+</header>
+
+<main>
+  <a class="back-link" href="blog.html">&larr; Back to all posts</a>
+  <div id="postWrapper">
+    <div class="post-date" id="postDate"></div>
+    <h1 id="postTitle"></h1>
+    <div id="postContent"></div>
+  </div>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Money Assure. All rights reserved.
+</footer>
+
+<script src="js/posts.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+  const post = (window.blogPosts || []).find(p => p.slug === slug);
+
+  if (!post) {
+    document.getElementById('postWrapper').innerHTML =
+      '<div class="not-found"><h2>Post not found</h2><p>This blog post may have been removed or the link is incorrect.</p></div>';
+  } else {
+    document.getElementById('pageTitle').textContent = post.title + ' | Money Assure Blog';
+    document.getElementById('postDate').textContent = formatDate(post.date);
+    document.getElementById('postTitle').textContent = post.title;
+
+    // content is an array of paragraphs -> rendered as <p> tags
+    document.getElementById('postContent').innerHTML =
+      post.content.map(para => `<p>${escapeHtml(para)}</p>`).join('');
+  }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>

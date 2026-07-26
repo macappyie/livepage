@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Blog | Money Assure</title>
+<meta name="description" content="Daily market insights, technical analysis and trading notes from Money Assure.">
+<style>
+  :root{
+    --bg:#0a0f0d;
+    --bg-card:#0f1815;
+    --border:#1c2b26;
+    --green:#00e28a;
+    --green-dim:#0a5c42;
+    --text:#e8f2ee;
+    --text-dim:#8fa39c;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Arial, sans-serif;
+    line-height:1.6;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    background:rgba(10,15,13,0.95);
+    backdrop-filter:blur(6px);
+    z-index:100;
+  }
+  .logo{
+    font-size:22px;
+    font-weight:700;
+    color:#fff;
+  }
+  .logo span{color:var(--green);}
+  nav a{
+    color:var(--text);
+    text-decoration:none;
+    margin-left:28px;
+    font-size:15px;
+    font-weight:500;
+    transition:color .2s;
+  }
+  nav a:hover, nav a.active{color:var(--green);}
+  .btn-cta{
+    background:var(--green);
+    color:#04120c !important;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+  }
+  .hero{
+    text-align:center;
+    padding:70px 20px 40px;
+    border-bottom:1px solid var(--border);
+  }
+  .hero .tag{
+    color:var(--green);
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:46px;
+    margin:14px 0;
+    color:#fff;
+  }
+  .hero h1 span{color:var(--green);}
+  .hero p{
+    color:var(--text-dim);
+    max-width:560px;
+    margin:0 auto;
+    font-size:16px;
+  }
+  .blog-grid{
+    max-width:1100px;
+    margin:0 auto;
+    padding:50px 40px 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+    gap:28px;
+  }
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    transition:transform .2s, border-color .2s;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:var(--green-dim);
+  }
+  .card-body{padding:22px 24px 26px;}
+  .card-date{
+    color:var(--green);
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .card h3{
+    font-size:19px;
+    margin:10px 0 8px;
+    color:#fff;
+  }
+  .card p{
+    color:var(--text-dim);
+    font-size:14px;
+  }
+  .card .read-more{
+    margin-top:14px;
+    display:inline-block;
+    color:var(--green);
+    font-size:13px;
+    font-weight:600;
+  }
+  .empty-state{
+    text-align:center;
+    color:var(--text-dim);
+    padding:60px 20px;
+    grid-column:1/-1;
+  }
+  footer{
+    text-align:center;
+    padding:30px;
+    color:var(--text-dim);
+    font-size:13px;
+    border-top:1px solid var(--border);
+  }
+  @media(max-width:700px){
+    header{padding:16px 20px;}
+    nav{display:none;}
+    .hero h1{font-size:32px;}
+    .blog-grid{padding:36px 20px 70px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MONEY <span>ASSURE</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn-cta">Get Started</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="tag">Daily Market Notes</div>
+  <h1>Market <span>Blog</span></h1>
+  <p>Daily thoughts on price action, setups, and lessons from the market — written straight from the charts.</p>
+</section>
+
+<div class="blog-grid" id="blogGrid">
+  <!-- Posts are injected here by js/posts.js -->
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Money Assure. All rights reserved.
+</footer>
+
+<script src="js/posts.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const grid = document.getElementById('blogGrid');
+
+  if (!window.blogPosts || window.blogPosts.length === 0) {
+    grid.innerHTML = '<div class="empty-state">No posts yet. Check back soon!</div>';
+  } else {
+    // Newest first
+    const sorted = [...window.blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    grid.innerHTML = sorted.map(post => `
+      <a class="card" href="blog-post.html?slug=${encodeURIComponent(post.slug)}">
+        <div class="card-body">
+          <div class="card-date">${formatDate(post.date)}</div>
+          <h3>${escapeHtml(post.title)}</h3>
+          <p>${escapeHtml(post.summary)}</p>
+          <span class="read-more">Read more &rarr;</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>
