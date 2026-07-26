@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Post | Money Assure (Internal Tool)</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --bg:#0a0f0d;
+    --bg-card:#0f1815;
+    --border:#1c2b26;
+    --green:#00e28a;
+    --green-dim:#0a5c42;
+    --text:#e8f2ee;
+    --text-dim:#8fa39c;
+    --red:#ff6b6b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Arial, sans-serif;
+    line-height:1.6;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    border-bottom:1px solid var(--border);
+  }
+  .logo{font-size:22px; font-weight:700; color:#fff;}
+  .logo span{color:var(--green);}
+  .badge{
+    color:var(--green);
+    font-size:12px;
+    border:1px solid var(--green-dim);
+    padding:4px 12px;
+    border-radius:20px;
+    letter-spacing:1px;
+  }
+  main{
+    max-width:720px;
+    margin:0 auto;
+    padding:50px 30px 100px;
+  }
+  h1{
+    font-size:30px;
+    color:#fff;
+    margin-bottom:10px;
+  }
+  .subtitle{
+    color:var(--text-dim);
+    margin-bottom:36px;
+    font-size:15px;
+  }
+  .field{
+    margin-bottom:24px;
+  }
+  label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+    margin-bottom:8px;
+  }
+  label .hint{
+    color:var(--text-dim);
+    font-weight:400;
+    font-size:13px;
+  }
+  input[type="text"], input[type="date"], textarea, input[type="file"]{
+    width:100%;
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px 14px;
+    color:var(--text);
+    font-size:15px;
+    font-family:inherit;
+  }
+  input[type="text"]:focus, textarea:focus{
+    outline:none;
+    border-color:var(--green-dim);
+  }
+  textarea{
+    min-height:180px;
+    resize:vertical;
+  }
+  .btn-generate{
+    background:var(--green);
+    color:#04120c;
+    border:none;
+    padding:14px 30px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    width:100%;
+  }
+  .btn-generate:hover{opacity:.9;}
+  .result{
+    margin-top:40px;
+    display:none;
+  }
+  .result.show{display:block;}
+  .result-box{
+    background:var(--bg-card);
+    border:1px solid var(--green-dim);
+    border-radius:14px;
+    padding:24px;
+    margin-bottom:20px;
+  }
+  .result-box h3{
+    color:var(--green);
+    font-size:15px;
+    margin-bottom:10px;
+  }
+  .result-box p{
+    color:var(--text-dim);
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  pre{
+    background:#060a08;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:16px;
+    font-size:13px;
+    overflow-x:auto;
+    color:#c8e6d8;
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+  .copy-btn{
+    background:transparent;
+    border:1px solid var(--green);
+    color:var(--green);
+    padding:8px 18px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:12px;
+  }
+  .copy-btn:hover{background:var(--green); color:#04120c;}
+  .download-link{
+    display:inline-block;
+    background:var(--green);
+    color:#04120c;
+    text-decoration:none;
+    padding:10px 22px;
+    border-radius:20px;
+    font-weight:600;
+    font-size:14px;
+    margin-top:8px;
+  }
+  .steps{
+    color:var(--text-dim);
+    font-size:14px;
+  }
+  .steps li{margin-bottom:8px;}
+  .error{
+    color:var(--red);
+    font-size:13px;
+    margin-top:6px;
+    display:none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MONEY <span>ASSURE</span></div>
+  <div class="badge">INTERNAL TOOL</div>
+</header>
+
+<main>
+  <h1>Add New Blog Post</h1>
+  <p class="subtitle">Form bharo, "Generate" dabao — code aur image download ho jayegi. Phir dono ko repo mein daal ke push kar dena.</p>
+
+  <div class="field">
+    <label>Post Title <span class="hint">— jo heading blog page par dikhega</span></label>
+    <input type="text" id="title" placeholder="e.g. Nifty Outlook: 29 July 2026">
+  </div>
+
+  <div class="field">
+    <label>Date</label>
+    <input type="date" id="postDate">
+  </div>
+
+  <div class="field">
+    <label>Short Summary <span class="hint">— card par dikhega (1-2 lines)</span></label>
+    <input type="text" id="summary" placeholder="e.g. Nifty ne aaj resistance zone todi, breakout confirm hua.">
+  </div>
+
+  <div class="field">
+    <label>Blog Content <span class="hint">— har paragraph ke beech ek khaali line chhodo</span></label>
+    <textarea id="content" placeholder="Pehla paragraph yahan likho.
+
+Dusra paragraph yahan likho.
+
+Aur jitna chaho utna likho."></textarea>
+  </div>
+
+  <div class="field">
+    <label>Chart / Photo <span class="hint">— optional, agar nahi daalni toh khali chhod do</span></label>
+    <input type="file" id="imageFile" accept="image/*">
+    <div class="error" id="fileError">Sirf image files allowed hain (jpg, png, webp).</div>
+  </div>
+
+  <button class="btn-generate" onclick="generatePost()">Generate Post Code</button>
+
+  <div class="result" id="result">
+
+    <div class="result-box" id="imageResultBox" style="display:none;">
+      <h3>1. Ye image download karo</h3>
+      <p>Is image ko download karke apni repo ke <strong>images/blog/</strong> folder mein daalo.</p>
+      <a class="download-link" id="downloadImageBtn" download>Download Image</a>
+    </div>
+
+    <div class="result-box">
+      <h3 id="codeStepNumber">1. Ye code copy karo</h3>
+      <p>Is poore block ko copy karke apni <strong>js/posts.js</strong> file mein, array ke andar sabse upar (last <code>}</code> ke baad ek comma lagakar) paste kar do.</p>
+      <pre id="codeOutput"></pre>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    </div>
+
+    <div class="result-box">
+      <h3>Phir ye karo</h3>
+      <ul class="steps">
+        <li>Image ko <code>images/blog/</code> folder mein daalo (agar upload ki thi)</li>
+        <li><code>js/posts.js</code> file kholo, copied code ko sabse upar wale post se pehle paste karo (comma lagana mat bhoolna)</li>
+        <li>Terminal mein: <code>git add . &amp;&amp; git commit -m "New blog post" &amp;&amp; git push</code></li>
+        <li>2-3 minute mein Amplify se live ho jayega</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<script>
+  document.getElementById('postDate').valueAsDate = new Date();
+
+  let uploadedFileURL = null;
+  let uploadedFileName = null;
+
+  document.getElementById('imageFile').addEventListener('change', function(e){
+    const file = e.target.files[0];
+    const errorEl = document.getElementById('fileError');
+    if (file && !file.type.startsWith('image/')) {
+      errorEl.style.display = 'block';
+      e.target.value = '';
+      uploadedFileURL = null;
+      return;
+    }
+    errorEl.style.display = 'none';
+  });
+
+  function slugify(text) {
+    return text
+      .toString()
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  }
+
+  function generatePost() {
+    const title = document.getElementById('title').value.trim();
+    const dateVal = document.getElementById('postDate').value;
+    const summary = document.getElementById('summary').value.trim();
+    const contentRaw = document.getElementById('content').value.trim();
+    const fileInput = document.getElementById('imageFile');
+
+    if (!title || !dateVal || !summary || !contentRaw) {
+      alert('Please fill Title, Date, Summary aur Content — sab zaroori hain.');
+      return;
+    }
+
+    const slug = slugify(title);
+    const paragraphs = contentRaw.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+
+    let imagePath = '';
+    const file = fileInput.files[0];
+
+    const imageResultBox = document.getElementById('imageResultBox');
+    const codeStepNumber = document.getElementById('codeStepNumber');
+
+    if (file) {
+      const ext = file.name.split('.').pop().toLowerCase();
+      const newFileName = slug + '.' + ext;
+      imagePath = 'images/blog/' + newFileName;
+
+      const url = URL.createObjectURL(file);
+      const downloadBtn = document.getElementById('downloadImageBtn');
+      downloadBtn.href = url;
+      downloadBtn.download = newFileName;
+
+      imageResultBox.style.display = 'block';
+      codeStepNumber.textContent = '2. Ye code copy karo';
+    } else {
+      imageResultBox.style.display = 'none';
+      codeStepNumber.textContent = '1. Ye code copy karo';
+    }
+
+    const contentLines = paragraphs.map(p => `      ${JSON.stringify(p)}`).join(',\n');
+
+    const code = `  {
+    slug: ${JSON.stringify(slug)},
+    title: ${JSON.stringify(title)},
+    date: ${JSON.stringify(dateVal)},
+    summary: ${JSON.stringify(summary)},
+    image: ${JSON.stringify(imagePath)},
+    content: [
+${contentLines}
+    ]
+  },`;
+
+    document.getElementById('codeOutput').textContent = code;
+    document.getElementById('result').classList.add('show');
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function copyCode() {
+    const code = document.getElementById('codeOutput').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  }
+</script>
+
+</body>
+</html>
