@@ -102,6 +102,13 @@
     transform:translateY(-4px);
     border-color:var(--green-dim);
   }
+  .card-thumb{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+    background:#0a1310;
+  }
   .card-body{padding:22px 24px 26px;}
   .card-date{
     color:var(--green);
@@ -191,6 +198,7 @@
 
     grid.innerHTML = sorted.map(post => `
       <a class="card" href="blog-post.html?slug=${encodeURIComponent(post.slug)}">
+        ${post.image ? `<img class="card-thumb" src="${post.image}" alt="${escapeHtml(post.title)}">` : ''}
         <div class="card-body">
           <div class="card-date">${formatDate(post.date)}</div>
           <h3>${escapeHtml(post.title)}</h3>
