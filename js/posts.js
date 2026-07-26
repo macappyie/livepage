@@ -33,4 +33,19 @@ window.blogPosts = [
       "Risk management hamesha priority par rakhein — koi bhi position lene se pehle apna stop-loss decide karo."
     ]
   },
+  {
+    slug: "nifty-outlook-28-july-2026",
+    title: "Nifty Outlook: 28 July 2026",
+    date: "2026-07-28",
+    summary: "Nifty 23,787 ke aas-paas trade kar raha hai. Intraday key levels aur kal ke liye possible scenarios yahan dekhein.",
+    image: "images/blog/nifty-intraday-28jul.png",
+    content: [
+      "Nifty abhi 23,787 ke level par trade kar raha hai, jo 23,750 support aur 23,800-23,900 resistance zone ke beech hai. 24/07 se lekar 27/07 tak ka intraday price action dikhata hai ki market ne 23,600 ke strong support se sharp bounce liya aur gradually upar climb kiya hai.",
+      { image: "images/blog/nifty-intraday-28jul.png", caption: "Nifty intraday chart (24/07 - 27/07) - key S/R zones" },
+      "Key intraday levels: Resistance 24,000 aur 23,900. Immediate resistance 23,800-23,850 ke beech hai, jahan price abhi consolidate kar raha hai. Support 23,750 immediate hai, aur 23,600 ek strong support hai jahan se aaj ka pura up-move shuru hua tha.",
+      "Kal (28 July) ke liye do scenarios ban sakte hain: agar price 23,800-23,900 zone ko accha volume ke saath break karta hai, toh 24,000 tak move dekh sakte hain. Lekin agar 23,750 support toot jata hai, toh price wapas 23,650-23,600 zone tak aa sakta hai.",
+      "Agar dono taraf koi clear breakout nahi hota, toh Nifty 23,750-23,900 ke range mein consolidate kar sakta hai. Yeh analysis sirf technical support-resistance levels par based hai — global cues aur opening gap se bhi price action par fark padega.",
+      "Disclaimer: Yeh sirf educational analysis hai, investment advice nahi. Trade karne se pehle apna risk management aur stop-loss zaroor decide karein."
+    ]
+  },
 ];
