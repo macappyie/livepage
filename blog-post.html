@@ -181,9 +181,13 @@
     }
 
     // content is an array of paragraphs (strings) OR image blocks ({image, caption})
+    // Strings support light markdown: "## Heading", **bold**, and \n for line breaks / bullet lists
     const contentHtml = post.content.map(item => {
       if (typeof item === 'string') {
-        return `<p>${escapeHtml(item)}</p>`;
+        if (item.startsWith('## ')) {
+          return `<h2>${escapeHtml(item.slice(3))}</h2>`;
+        }
+        return `<p>${formatInline(item)}</p>`;
       } else if (item && item.image) {
         return `<div class="inline-image-block">
                   <img src="${item.image}" alt="${escapeHtml(item.caption || post.title)}">
@@ -205,6 +209,14 @@
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  // Escapes HTML first, then converts **bold** to <strong> and \n to <br>
+  function formatInline(str) {
+    let safe = escapeHtml(str);
+    safe = safe.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    safe = safe.replace(/\n/g, '<br>');
+    return safe;
   }
 </script>
 
