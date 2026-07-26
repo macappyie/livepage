@@ -38,10 +38,10 @@ window.blogPosts = [
     title: "Nifty Outlook: 28 July 2026",
     date: "2026-07-28",
     summary: "Yahan par apni today's blog ki short summary likho jo card par dikhegi.",
-    image: "images/blog/nifty-28-july.jpg",
+    image: "images/blog/nifty-test.png",
     content: [
       "Yahan apna pehla paragraph likho.",
-      { image: "images/blog/chart-detail-1.jpg", caption: "Nifty hourly chart - key resistance zone" },
+      { image: "images/blog/nifty-test.png", caption: "Nifty hourly chart - key resistance zone" },
       "Is image ke baad ka paragraph yahan likho.",
       "Aur jitne chaho utne paragraphs ya images add kar sakte ho."
     ]
