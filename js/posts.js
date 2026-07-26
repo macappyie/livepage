@@ -33,19 +33,4 @@ window.blogPosts = [
       "Risk management hamesha priority par rakhein — koi bhi position lene se pehle apna stop-loss decide karo."
     ]
   },
-  {
-    slug: "nifty-outlook-28-july-2026",
-    title: "Nifty Outlook: 28 July 2026",
-    date: "2026-07-28",
-    summary: "Yahan par apni today's blog ki short summary likho jo card par dikhegi.",
-    image: "images/blog/nifty-test.png",
-    content: [
-      "Yahan apna pehla paragraph likho.",
-      { image: "images/blog/nifty-test.png", caption: "Nifty hourly chart - key resistance zone" },
-      "Is image ke baad ka paragraph yahan likho.",
-      "Aur jitne chaho utne paragraphs ya images add kar sakte ho."
-    ]
-  }
-  // Neeche naya post add karne ke liye, yaha ek comma lagao aur naya { } object paste karo.
-  // Upar wale post ko template ki tarah copy karke use kar sakte ho.
 ];
