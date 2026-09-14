@@ -48,6 +48,7 @@
   <div class="container position-relative">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
+        <div class="eyebrow mb-3">SEBI-aware &middot; investor education</div>
         <h1 class="mb-3">MONEY <span class="text-neon">ASSURE</span></h1>
         <h2 class="h3 mb-4" style="color:var(--text-lo); font-weight:600;">Invest Smart. Trade Confidently. Grow Assured.</h2>
         <p class="lead-ma mb-4">A structured, mentor-led path from stock market basics to technical analysis and
@@ -55,19 +56,20 @@
         <div class="d-flex flex-wrap gap-3 mb-5">
           <a href="courses.html" class="btn btn-neon">Get Started <i class="bi bi-arrow-up-right ms-1"></i></a>
           <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+          <a href="blog.html" class="btn btn-ghost">Read Blog</a>
         </div>
         <div class="row stat-row g-4">
           <div class="col-4 stat">
-            <div class="num">1</div>
-            <div class="small text-lo">Month, focused course</div>
+            <div class="num">3</div>
+            <div class="small text-lo">Months, cohort-based</div>
           </div>
           <div class="col-4 stat">
-            <div class="num">Mon&ndash;Sat</div>
-            <div class="small text-lo">Live classes</div>
+            <div class="num">12</div>
+            <div class="small text-lo">Structured modules</div>
           </div>
           <div class="col-4 stat">
-            <div class="num">Live</div>
-            <div class="small text-lo">Trading overview sessions</div>
+            <div class="num">24/7</div>
+            <div class="small text-lo">Community support</div>
           </div>
         </div>
       </div>
@@ -130,7 +132,7 @@
             <div class="glass glass-card h-100">
               <div class="icon-tile mb-3"><i class="bi bi-graph-up-arrow"></i></div>
               <h5 class="mb-2">Structured Curriculum</h5>
-              <p class="text-lo small mb-0">A step-by-step curriculum moving from stock market basics to options trading fundamentals.</p>
+              <p class="text-lo small mb-0">12 modules moving from stock market basics to advanced options strategies.</p>
             </div>
           </div>
           <div class="col-sm-6 reveal">
@@ -202,7 +204,7 @@
     <div class="row align-items-end mb-5">
       <div class="col-lg-8 reveal">
         <div class="eyebrow mb-3">Course Preview</div>
-        <h2 class="mb-0">1-Month Basics Course &mdash; with Money Assure</h2>
+        <h2 class="mb-0">Basics to advanced &mdash; with Money Assure</h2>
       </div>
       <div class="col-lg-4 text-lg-end reveal">
         <a href="courses.html" class="btn btn-ghost mt-3 mt-lg-0">View Full Curriculum</a>
@@ -218,23 +220,23 @@
       </div>
       <div class="col-md-6 col-lg-3 reveal">
         <div class="glass glass-card h-100">
-          <span class="badge-neon mb-3 d-inline-block">Module 03</span>
+          <span class="badge-neon mb-3 d-inline-block">Module 04</span>
           <h5>Technical Analysis</h5>
           <p class="text-lo small mb-0">Reading charts, candlesticks, support and resistance zones.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 reveal">
         <div class="glass glass-card h-100">
-          <span class="badge-neon mb-3 d-inline-block">Module 07</span>
-          <h5>Options Trading Basics</h5>
-          <p class="text-lo small mb-0">Introduction to calls, puts and simple F&amp;O concepts (Advance plan).</p>
+          <span class="badge-neon mb-3 d-inline-block">Module 08</span>
+          <h5>Options Trading (F&amp;O)</h5>
+          <p class="text-lo small mb-0">Calls, puts and defined-risk strategies like straddles and iron condors.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3 reveal">
         <div class="glass glass-card h-100">
-          <span class="badge-neon mb-3 d-inline-block">Module 08</span>
-          <h5>Live Trading Overview</h5>
-          <p class="text-lo small mb-0">Occasional live market walkthroughs so you can see real trading in action.</p>
+          <span class="badge-neon mb-3 d-inline-block">Module 12</span>
+          <h5>Portfolio Management</h5>
+          <p class="text-lo small mb-0">Asset allocation, rebalancing and tracking long-term performance.</p>
         </div>
       </div>
     </div>
