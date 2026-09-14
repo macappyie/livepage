@@ -35,12 +35,36 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
       var successBox = document.getElementById('formSuccess');
-      contactForm.reset();
-      contactForm.classList.remove('was-validated');
-      if (successBox) {
-        successBox.classList.remove('d-none');
-        setTimeout(function () { successBox.classList.add('d-none'); }, 6000);
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
       }
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (res) {
+          if (!res.ok) { throw new Error('Submit failed'); }
+          contactForm.reset();
+          contactForm.classList.remove('was-validated');
+          if (successBox) {
+            successBox.classList.remove('d-none');
+            setTimeout(function () { successBox.classList.add('d-none'); }, 6000);
+          }
+        })
+        .catch(function () {
+          alert('Sorry, your message could not be sent right now. Please WhatsApp or call us directly at +91 93262 37560.');
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
+        });
     });
   }
 

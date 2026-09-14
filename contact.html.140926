@@ -60,39 +60,35 @@
           <div id="formSuccess" class="alert d-none" style="background:rgba(0,255,171,.12); border:1px solid var(--neon); color:var(--neon);">
             <i class="bi bi-check-circle me-2"></i>Thanks! Your message has been received. We'll get back to you soon.
           </div>
-          <form id="contactForm" class="row g-3" novalidate
-                action="https://formsubmit.co/fd315e98b01ec376105010a9cedc69b521ad3545b44331b29607b7cb332dccff" method="POST">
-            <input type="hidden" name="_subject" value="New enquiry from Money Assure website">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+          <form id="contactForm" class="row g-3" novalidate>
             <div class="col-md-6">
               <label class="form-label form-label-ma">Full Name</label>
-              <input type="text" name="name" class="form-control form-control-ma" required>
+              <input type="text" class="form-control form-control-ma" required>
               <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="col-md-6">
               <label class="form-label form-label-ma">Phone Number</label>
-              <input type="tel" name="phone" class="form-control form-control-ma" pattern="[0-9]{10}" required>
+              <input type="tel" class="form-control form-control-ma" pattern="[0-9]{10}" required>
               <div class="invalid-feedback">Please enter a valid 10-digit number.</div>
             </div>
             <div class="col-md-6">
               <label class="form-label form-label-ma">Email Address</label>
-              <input type="email" name="email" class="form-control form-control-ma" required>
+              <input type="email" class="form-control form-control-ma" required>
               <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
             <div class="col-md-6">
               <label class="form-label form-label-ma">Interested In</label>
-              <select name="interested_in" class="form-select form-select-ma" required>
+              <select class="form-select form-select-ma" required>
                 <option value="" selected disabled>Choose a plan</option>
-                <option>Basic Plan</option>
-                <option>Advance Plan</option>
+                <option>Pro Plan</option>
+                <option>Elite Mentorship</option>
                 <option>Not sure yet</option>
               </select>
               <div class="invalid-feedback">Please select an option.</div>
             </div>
             <div class="col-12">
               <label class="form-label form-label-ma">Message</label>
-              <textarea name="message" class="form-control form-control-ma" rows="4" placeholder="Tell us about your experience level and goals" required></textarea>
+              <textarea class="form-control form-control-ma" rows="4" placeholder="Tell us about your experience level and goals" required></textarea>
               <div class="invalid-feedback">Please add a short message.</div>
             </div>
             <div class="col-12 form-check">
