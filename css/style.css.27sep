@@ -129,6 +129,11 @@ a:hover{color:var(--signal-blue);}
   padding:2rem;
   transition:transform .3s ease, border-color .3s ease, background .3s ease;
 }
+.glass-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(0,255,171,.4);
+  background:linear-gradient(180deg, rgba(0,255,171,.07), rgba(255,255,255,.02));
+}
 
 /* ---------- Navbar ---------- */
 .navbar-ma{
